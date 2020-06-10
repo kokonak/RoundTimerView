@@ -210,7 +210,6 @@ class TimerView: UIView {
             return
         }
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
-            print(self.time)
             if self.time <= 0 {
                 timer.invalidate()
                 self.timer = nil
