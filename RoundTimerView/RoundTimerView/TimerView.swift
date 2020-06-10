@@ -94,7 +94,7 @@ class TimerView: UIView {
         self.backgroundColor = UIColor.clear
                 
         self.roundLayerBackground.lineWidth = self.borderWidth
-        self.roundLayerBackground.strokeColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.00).cgColor
+        self.roundLayerBackground.strokeColor = UIColor(red:0.62, green:0.62, blue:0.62, alpha:1.00).cgColor
         self.roundLayerBackground.fillColor = UIColor.clear.cgColor
         self.roundLayerBackground.strokeEnd = 1
         self.layer.addSublayer(self.roundLayerBackground)
