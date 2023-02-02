@@ -11,7 +11,7 @@
 		B61ED423248F8FDC0030EE68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ED422248F8FDC0030EE68 /* ViewController.swift */; };
 		B61ED428248F8FDD0030EE68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61ED427248F8FDD0030EE68 /* Assets.xcassets */; };
 		B61ED42B248F8FDD0030EE68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61ED429248F8FDD0030EE68 /* LaunchScreen.storyboard */; };
-		B61ED435248FD76F0030EE68 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ED434248FD76F0030EE68 /* TimerView.swift */; };
+		B6FF1952298BF13E00A9C216 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FF1951298BF13E00A9C216 /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		B61ED427248F8FDD0030EE68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B61ED42A248F8FDD0030EE68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B61ED42C248F8FDD0030EE68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B61ED434248FD76F0030EE68 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		B6FF1951298BF13E00A9C216 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			children = (
 				B61ED41E248F8FDC0030EE68 /* AppDelegate.swift */,
 				B61ED422248F8FDC0030EE68 /* ViewController.swift */,
-				B61ED434248FD76F0030EE68 /* TimerView.swift */,
+				B6FF1951298BF13E00A9C216 /* TimerView.swift */,
 				B61ED427248F8FDD0030EE68 /* Assets.xcassets */,
 				B61ED429248F8FDD0030EE68 /* LaunchScreen.storyboard */,
 				B61ED42C248F8FDD0030EE68 /* Info.plist */,
@@ -135,8 +135,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61ED423248F8FDC0030EE68 /* ViewController.swift in Sources */,
-				B61ED435248FD76F0030EE68 /* TimerView.swift in Sources */,
 				B61ED41F248F8FDC0030EE68 /* AppDelegate.swift in Sources */,
+				B6FF1952298BF13E00A9C216 /* TimerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

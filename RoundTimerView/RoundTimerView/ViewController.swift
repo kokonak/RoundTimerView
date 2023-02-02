@@ -8,40 +8,55 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    private let startButton: UIButton = UIButton()
-    private let timerView: TimerView = TimerView()
-    
-    override func loadView() {
-        super.loadView()
+final class ViewController: UIViewController {
 
-        self.view.addSubview(self.timerView)
-        
-        self.startButton.layer.borderWidth = 1
-        self.startButton.layer.borderColor = UIColor.black.cgColor
-        self.startButton.setTitle("Timer start!", for: .normal)
-        self.startButton.setTitleColor(UIColor.black, for: .normal)
-        self.startButton.addTarget(self, action: #selector(timerStart(_:)), for: .touchUpInside)
-        self.view.addSubview(self.startButton)
-    }
+    private lazy var startButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 20
+        button.setTitle("Start", for: .normal)
+        button.setTitle("Pause", for: .selected)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(red: 0.03, green: 0.02, blue: 0.20, alpha: 1)
+        button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
+        return button
+    }()
+
+    private let timerView: TimerView = TimerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        self.timerView.frame.size = CGSize(width: 300, height: 300)
-        self.timerView.center = self.view.center
-        
-        self.startButton.frame = CGRect(x: (self.view.frame.width - 200)/2, y: self.timerView.frame.maxY + 30, width: 200, height: 50)
+        setupUI()
     }
 
-    @objc func timerStart(_ sender: UIButton) {
-        self.timerView.startTimer()
+    private func setupUI() {
+        view.backgroundColor = UIColor.white
+
+        view.addSubview(timerView)
+        timerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            timerView.widthAnchor.constraint(equalToConstant: 300),
+            timerView.heightAnchor.constraint(equalTo: timerView.widthAnchor),
+            timerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timerView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+
+        view.addSubview(startButton)
+        startButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            startButton.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 30),
+            startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            startButton.widthAnchor.constraint(equalToConstant: 200),
+            startButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 
+    @objc func buttonTap() {
+        if startButton.isSelected {
+            timerView.pauseTimer()
+        } else {
+            timerView.startTimer()
+        }
+        startButton.isSelected = !startButton.isSelected
+    }
 }
 
